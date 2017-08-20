@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<head>
+    <link href="css/todo.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="js/todo.js"></script>
+</head>
 
 <body>
 
@@ -8,9 +13,14 @@
         <h1>Todo List</h1>
         <ul>
             <li ng-repeat="todo in todos">
-                <input type="checkbox" ng-model=""
+                <input type="checkbox" ng-model="todo.done">
+                <span class="todo-{{todo.done}}">{{todo.text}}</span>
             </li>
         </ul>
+        <form>
+            <input type="text" ng-model="addTodo">
+            <button type="button" ng-click="addTodoList();">Add</button>
+        </form>
     </div>
 </body>
 

@@ -15,4 +15,9 @@ angular.module("todoApp", []).controller("todoCtrl", function ($scope) {
         text: 'learn angular',
         done: false
     }];
+
+    $scope.addTodoList = function () {
+        $scope.todos.push({text:$scope.addTodo,done:false});
+        $scope.addTodo = '';
+    };
 });
