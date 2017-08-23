@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<style>
+    .roundbubble{
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        margin-right: 10px;
+        display: inline-block;
+    }
+</style>
+
+<body>
+
+    <div ng-app="searchApp" ng-controller="searchAppCtrl">
+        <h1>Add more bubble???</h1>
+        Enter your color :
+        <input type="text" ng-model="bubblecolor"><button ng-click="addBubble();">add</button>
+        <br>
+        <br>
+        <br>
+        <div ng-repeat="bubble in bubbles " class="roundbubble" id="{{bubble}}" style="background:{{bubble}}">
+        </div>
+    </div>
+</body>
+
+
+<script>
+    angular.module("searchApp", []).controller("searchAppCtrl", function ($scope) {
+        $scope.bubbles = ['yellow']
+        $scope.addBubble = function(){
+            $scope.bubbles.push($scope.bubblecolor);
+            $scope.bubblecolor="";
+        }
+    });
+</script>
+
+</html>
