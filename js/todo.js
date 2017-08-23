@@ -15,6 +15,10 @@ angular.module("todoApp", []).controller("todoCtrl", function ($scope) {
         text: 'learn angular',
         done: false
     }];
+    
+    $scope.totalTodos = function(){
+        return $scope.todos.length;
+    }
 
     $scope.addTodoList = function () {
         $scope.todos.push({text:$scope.addTodo,done:false});

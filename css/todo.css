@@ -2,3 +2,9 @@
     text-decoration: line-through;
     color: #999;
 }
+
+.totaltodos{
+    padding: 10px;
+    border-radius: 50%;
+    color: #333;
+}
