@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<body>
+
+    <div ng-app="searchApp" ng-controller="searchAppCtrl">
+        <input type="text" ng-model="searchlegends">
+        <ul>
+            <li ng-repeat="legend in legends | filter : searchlegends">
+                {{legend}}
+            </li>
+        </ul>
+    </div>
+</body>
+
+
+<script>
+    angular.module("searchApp", []).controller("searchAppCtrl", function ($scope) {
+        $scope.legends=["sharukh khan","cristiano ronaldo","m s Dhoni","amitabh bachchan","monkey d luffy"]
+    });
+</script>
+
+</html>
