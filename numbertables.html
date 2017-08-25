@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style>
+        .table-subbox {
+            display: inline-block;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div ng-app="table" ng-controller="tableCtrl">
+        <input type="text" ng-model="tablenumber" placeholder="Enter the number">
+        <button ng-click="createTable();">Get Table</button>
+        <br>
+        <br>
+        <br>
+        <div class="table-subbox" ng-repeat="tNumber in tArray">
+            <p ng-repeat="constant in constantArray">
+                {{tNumber}} X {{constant}} = {{tNumber * constant}}
+            </p>
+        </div>
+    </div>
+</body>
+
+<script>
+    angular.module("table", []).controller("tableCtrl", function ($scope) {
+        $scope.tArray = [];
+        $scope.constantArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        $scope.createTable = function () {
+            $scope.tArray.push($scope.tablenumber);
+            $scope.tablenumber = "";
+        }
+    });
+</script>
+
+</html>
