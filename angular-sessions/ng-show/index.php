@@ -20,10 +20,8 @@
                         <label>Enter your Demo Website Link</label>
                         <input type="text" ng-model="handle">
                     </form>
-                    <h1><a ng-cloak href="http://demo.quanical.com/{{handle}}" target="_blank">demo.quanical.com/{{handle}}</a></h1>
-                    <h4 style="color:#ff006c" ng-if="handle == 'jdeyes'">WOW!! This is my project</h4>
-                    <h4 style="color:#ff006c" ng-if="handle != 'jdeyes'">OOPS!! This is not my project</h4>
-                    <h4 style="color:#ff006c" ng-if="handle == 'shrmik-blue'">WOW!! This is Rafats project</h4>
+                    <h1><a href="http://demo.quanical.com/{{handle}}" target="_blank">demo.quanical.com/{{handle}}</a></h1>
+                    <h4 style="color:#ff006c" ng-show="handle == 'jdeyes'">WOW!! This is my project</h4>
                 </div>
             </div>
         </div>

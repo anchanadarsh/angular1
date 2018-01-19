@@ -15,15 +15,12 @@
     <section class="container-fluid p-lr-none p-tb-md bg-f1f" style="height:100vh" ng-controller="myController">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12">
-                    <form>
-                        <label>Enter your Demo Website Link</label>
-                        <input type="text" ng-model="handle">
-                    </form>
-                    <h1><a ng-cloak href="http://demo.quanical.com/{{handle}}" target="_blank">demo.quanical.com/{{handle}}</a></h1>
-                    <h4 style="color:#ff006c" ng-if="handle == 'jdeyes'">WOW!! This is my project</h4>
-                    <h4 style="color:#ff006c" ng-if="handle != 'jdeyes'">OOPS!! This is not my project</h4>
-                    <h4 style="color:#ff006c" ng-if="handle == 'shrmik-blue'">WOW!! This is Rafats project</h4>
+                <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="team in teams">
+                    <div class="team-box">
+                        <img class="img-responsive" src="img/{{team.img}}.jpg">
+                        <h2 class="mem-name">{{team.name}}</h2>
+                        <p class="mem-description">{{team.desc}}</p>
+                    </div>
                 </div>
             </div>
         </div>
