@@ -12,17 +12,38 @@
 
 <body ng-app="hangman">
     <div class="clearfix"></div>
-    <section ng-controller="hangmanController" id="section-home1" class="container-fluid text-center p-tb-md bg-f1f" style="height:100vh">
-        <h1>
+    <section ng-controller="hangmanController" class="container-fluid text-center p-tb-md bg-f1f" style="min-height:100vh">
+        <table id="movietable" class="m-tb-xxl table table-bordered" style="width:50%;margin:30px auto;display:none">
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+            </tr>
+            <tr ng-repeat="mname in mnames">
+                <td>{{mname.movieno}}</td>
+                <td>{{mname.moviename}}</td>
+            </tr>
+        </table>
+
+        <button class="btn btn-primary" ng-click="getmovie()">Get Movie</button>
+
+        <h1 class="guess-space">
             <ul>
-                <li>A</li>
-                <li>A</li>
-                <li>A</li>
-                <li>A</li>
-                <li>A</li>
-                <li>A</li>
+                <li ng-repeat="i in setmovie(getrowdet.length) track by $index"></li>
             </ul>
         </h1>
+
+        <div class="keypad">
+            <div class="container-fluid">
+                <div class="row">
+                    <div ng-repeat="key in keys" class="col-xs-3 p-lr-none">
+                        <div class="keys" id="{{key}}">
+                            <h3>{{key}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
     <div class="clearfix"></div>
 
