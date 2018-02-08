@@ -29,6 +29,7 @@ cab.controller("cabController", ['$scope', function ($scope) {
         }
         var number = ($scope.x * 100) + ($scope.y * 10) + $scope.z;
         //        alert(number);
+        $scope.showyes = true;
     }
     $scope.userNumArray = [];
 
@@ -36,6 +37,13 @@ cab.controller("cabController", ['$scope', function ($scope) {
         $scope.l = Math.floor($scope.guessNumber / 100);
         $scope.m = Math.floor(($scope.guessNumber % 100) / 10);
         $scope.n = $scope.guessNumber % 10;
+        if (($scope.guessNumber.length == 3) && (($scope.l == $scope.m) || ($scope.n == $scope.m) || ($scope.l == $scope.n))) {
+            $scope.repeatedyes = true;
+            return;
+        } else {
+            $scope.repeatedyes = false;
+        }
+
         $scope.result;
         $scope.result1;
         $scope.result2;
