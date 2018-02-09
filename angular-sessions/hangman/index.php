@@ -20,7 +20,7 @@
             </tr>
             <tr ng-repeat="mname in mnames">
                 <td>{{mname.movieno}}</td>
-                <td>{{mname.moviename}}</td>
+                <td>{{mname.moviename | uppercase}}</td>
             </tr>
         </table>
 
@@ -28,7 +28,7 @@
 
         <h1 class="guess-space">
             <ul>
-                <li ng-repeat="i in setmovie(getrowdet.length) track by $index"></li>
+                <li ng-repeat="i in getrowdetarray track by $index" ng-class="{'transbor' : getrowdetarray[$index]==' '}" id="{{$index}}" class="guesskey"></li>
             </ul>
         </h1>
 
@@ -36,7 +36,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div ng-repeat="key in keys" class="col-xs-3 p-lr-none">
-                        <div class="keys" id="{{key}}">
+                        <div class="keys" ng-click="checkndisplay(key)" id="{{key}}" ng-class="">
                             <h3>{{key}}</h3>
                         </div>
                     </div>
